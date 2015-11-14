@@ -9762,7 +9762,7 @@ _dereq_('./$.object-sap')('keys', function($keys){
 });
 },{"./$.object-sap":68,"./$.to-object":71}],75:[function(_dereq_,module,exports){
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
-var $def = _dereq_('./$.def');
-$def($def.S, 'Object', {setPrototypeOf: _dereq_('./$.set-proto').set});
+  var $def = _dereq_('./$.def');
+  $def($def.S, 'Object', {setPrototypeOf: _dereq_('./$.set-proto').set});
 },{"./$.def":61,"./$.set-proto":69}]},{},[7])(7)
 });
