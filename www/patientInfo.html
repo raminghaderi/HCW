@@ -21,37 +21,7 @@
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-    <script type="text/javascript">
-        window.onload = function () {
-
-            var dataPoints = [];
-            var y = 0;
-            var limit = 50000;
-
-            for ( var i = 0; i < limit; i++ ) {
-
-                y += Math.round( 10 + Math.random() * (-10 -10));
-                dataPoints.push({ y: y});
-            }
-
-            var chart = new CanvasJS.Chart("chartContainer",
-                    {
-                        animationEnabled: true,
-                        zoomEnabled: true,
-
-                        title:{
-                            text: "Performance Demo with 50,000 DataPoints"
-                        },
-                        data: [
-                            {
-                                type: "line",
-                                dataPoints: dataPoints
-                            }
-                        ]
-                    });
-            chart.render();
-        }
-    </script>
+    <script type="text/javascript" src="js/graph.js"></script>
     <script type="text/javascript" src="canvasjs.min.js"></script>
 
 </head>
