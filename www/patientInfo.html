@@ -20,25 +20,49 @@
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var dataPoints = [];
+            var y = 0;
+            var limit = 50000;
+
+            for ( var i = 0; i < limit; i++ ) {
+
+                y += Math.round( 10 + Math.random() * (-10 -10));
+                dataPoints.push({ y: y});
+            }
+
+            var chart = new CanvasJS.Chart("chartContainer",
+                    {
+                        animationEnabled: true,
+                        zoomEnabled: true,
+
+                        title:{
+                            text: "Performance Demo with 50,000 DataPoints"
+                        },
+                        data: [
+                            {
+                                type: "line",
+                                dataPoints: dataPoints
+                            }
+                        ]
+                    });
+            chart.render();
+        }
+    </script>
+    <script type="text/javascript" src="canvasjs.min.js"></script>
+
 </head>
 <body>
 
-<!-- Header -->
-<header id="header">
-    <h1>HCW</h1>
-    <p>Health Care Wearable</p>
-</header>
 
-<!-- Signup Form -->
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
 
-<form id="signup-form" method="post" >
 
-    <input type="text"  id="search" placeholder="Enter Patient ID" />
-    <input type="button" value="Search" id="btnSearch" onclick="mast()"  />
-</form>
 
-<script src="js/parseInit.js"></script>
-<script src="js/ParseSearch.js"></script>
+
 
 <!-- Scripts -->
 <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
