@@ -1,10 +1,17 @@
 /**
  * Created by Raminho on 11/14/2015.
  */
+var VAR = {
+    myvalue: document.getElementById("search").value
+};
+
 function mast () {
+
 
     var ID = Parse.Object.extend("IDs");
     var query = new Parse.Query(ID);
+
+
 
     var search = document.getElementById("search").value;
 

@@ -3,16 +3,16 @@
  */
 window.onload = function () {
 
-    var patient = document.getElementById("search").value;
+    //var patient = Var.myvalue;
 
-    var graph = Parse.Object.extend(patient);
+  /*  var graph = Parse.Object.extend("patient1");
     var query = new Parse.Query(graph);
     query.greaterThan("heartBeat", 0);
     query.find({
         success: function(results) {
         //   alert("Successfully retrieved " + results.length + " scores.");
 
-
+    */
 
             var dataPoints = [];
             var y = 0;
@@ -43,7 +43,7 @@ window.onload = function () {
             chart.render();
 
 
-
+/*
 
         },
         error: function(error) {
@@ -51,7 +51,7 @@ window.onload = function () {
         }
     });
 
-
+*/
 
 //------------------------------------------
 

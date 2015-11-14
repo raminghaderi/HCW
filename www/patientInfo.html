@@ -21,7 +21,65 @@
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-    <script type="text/javascript" src="js/graph.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            Parse.initialize("pRuiPyhzLD8qOfQxnKOyCyQAkrdIQyZKcQt3184m", "IF0VqIohNLvo9mVZ10gX5wvaR8wtXcnoQhfeqPVs");
+            var patient = document.getElementById("search");
+
+              var graph = Parse.Object.extend("patient1");
+             var query = new Parse.Query(graph);
+             query.greaterThan("heartBeat", 0);
+             query.find({
+             success: function(results) {
+
+
+
+
+            var dataPoints = [];
+            var y = 0;
+            var limit = results.length;
+             var object = results[results.length];
+
+            for ( var i = 0; i < results.length; i++ ) {
+
+              //  y += results[i];
+                var object = results[i];
+
+                dataPoints.push({ y: object.get('heartBeat')});
+            }
+
+            var chart = new CanvasJS.Chart("chartContainer",
+                    {
+                        animationEnabled: true,
+                        zoomEnabled: true,
+
+                        title:{
+                            text: "Performance Demo with 50,000 DataPoints"
+                        },
+                        data: [
+                            {
+                                type: "line",
+                                dataPoints: dataPoints
+                            }
+                        ]
+                    });
+            chart.render();
+
+
+
+
+             },
+             error: function(error) {
+             alert("Error: " + error.code + " " + error.message);
+             }
+             });
+
+
+
+//------------------------------------------
+
+        }
+    </script>
     <script type="text/javascript" src="canvasjs.min.js"></script>
 
 </head>
